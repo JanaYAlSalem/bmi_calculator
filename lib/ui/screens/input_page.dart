@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '/util/gender.dart';
 import '/util/constants.dart';
+import '/util/calculator_bmi.dart';
 import '/ui/components/card_item.dart';
 import '/ui/components/icon_content.dart';
 import '/ui/components/round_icon_button.dart';
@@ -211,10 +212,16 @@ class _InputPageState extends State<InputPage> {
               buttonTitle: 'CALCULATE',
               onTap: () {
 
+                CalculatorBMI calc = CalculatorBMI.positional(height: height, weight: weight);
+
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ResultsPage(),
+                      builder: (context) => ResultsPage(
+                        bmiResult: calc.calculateBMI(),
+                        resultText: calc.getResult(),
+                        interpretation: calc.getInterpretation(),
+                      ),
                     ),
                   );
 },

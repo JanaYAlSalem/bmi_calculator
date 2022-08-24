@@ -9,10 +9,15 @@ import '/ui/components/bottom_button.dart';
 
 class ResultsPage extends StatelessWidget {
 
+  ResultsPage(
+      {@required this.interpretation,
+        @required this.bmiResult,
+        @required this.resultText});
 
-  final String bmiResult = "0" ;
-  final String? resultText = "0";
-  final String? interpretation = "0";
+
+  final String? bmiResult;
+  final String? resultText;
+  final String? interpretation;
 
   @override
   Widget build(BuildContext context) {

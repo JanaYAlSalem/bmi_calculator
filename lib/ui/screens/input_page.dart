@@ -6,7 +6,7 @@ import '/ui/components/card_item.dart';
 import '/ui/components/icon_content.dart';
 import '/ui/components/round_icon_button.dart';
 import '/ui/components/bottom_button.dart';
-
+import '/ui/screens/results_page.dart';
 
 class InputPage extends StatefulWidget {
   @override
@@ -210,6 +210,13 @@ class _InputPageState extends State<InputPage> {
             BottomButton(
               buttonTitle: 'CALCULATE',
               onTap: () {
+
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ResultsPage(),
+                    ),
+                  );
 },
             ),
           ],
